@@ -22,6 +22,80 @@
     .header-info h2 { margin: 0; color: #34495e; font-size: 26px; }
     .header-info h3 { margin: 5px 0 15px 0; color: #7f8c8d; font-weight: 500; font-size: 20px; }
     .header-info p { margin: 6px 0; color: #2c3e50; font-size: 16px; }
+    
+    /* --- ЖАҢАДАН ҚОСЫЛҒАН СТИЛЬДЕР --- */
+    .search-bar {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .search-bar input {
+      width: 50%;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 25px;
+      transition: border-color 0.3s;
+    }
+    .search-bar input:focus {
+      border-color: #74ebd5;
+      outline: none;
+    }
+    .content-section {
+      width: 80%;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .content-section h2 {
+      text-align: center;
+      color: #34495e;
+      margin-bottom: 20px;
+    }
+    .content-section p {
+      line-height: 1.7;
+      text-align: justify;
+    }
+    .content-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .news-card {
+      background: #fdfdfd;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin: 0;
+    }
+    .news-card-content {
+      padding: 15px;
+    }
+    .news-card-content h3 {
+      margin-top: 0;
+    }
+    .news-card-content a {
+      text-decoration: none;
+      color: #fc5c7d;
+      font-weight: bold;
+    }
+    /* --- АЯҚТАЛДЫ --- */
+
     .main-title {
       text-align: center;
       margin-top: 20px;
@@ -69,6 +143,11 @@
 </head>
 <body>
 
+  <!-- Іздеу жолағы -->
+  <div class="search-bar">
+    <input type="text" placeholder="Сайттан іздеу...">
+  </div>
+
   <!-- Ақпараттық блок -->
   <div class="header-info">
     <h2>Қорқыт ата атындағы Қызылорда университеті</h2>
@@ -108,6 +187,38 @@
   <div class="section-link">
     <a href="institute.html">Институт басшылығы және оқытушылар</a>
   </div>
+  
+  <!-- Мамандық туралы және кесте суреті -->
+  <div class="content-section">
+    <h2>"Computer Science" мамандығы туралы</h2>
+    <p>
+      Computer Science (Компьютерлік ғылымдар) — бұл есептеуіш жүйелердің теориялық негіздерін, алгоритмдерді, деректер құрылымын, бағдарламалау тілдерін және жасанды интеллектіні зерттейтін іргелі ғылым. Бұл мамандықтың студенттері бағдарламалық қамтамасыз етуді әзірлеуден бастап, күрделі деректерді талдауға, машиналық оқыту модельдерін құруға дейінгі кең ауқымды дағдыларды меңгереді. Түлектер IT-индустрияның ең сұранысқа ие салаларында жұмыс істей алады.
+    </p>
+    <img src="schedule-photo.jpg" alt="Сабақ кестесінің суреті">
+  </div>
+  
+  <!-- Соңғы жаңалықтар -->
+  <div class="content-section">
+    <h2>Соңғы жаңалықтар</h2>
+    <div class="news-container">
+      <div class="news-card">
+        <img src="news1.jpg" alt="Жаңалық 1 суреті">
+        <div class="news-card-content">
+          <h3>Халықаралық хакатон жеңімпаздары</h3>
+          <p>Біздің институт студенттері халықаралық "AI Challenge 2024" хакатонында бірінші орынды иеленді. Олардың жобасы білім беру саласындағы мәселелерді шешуге бағытталған.</p>
+          <a href="#">Толығырақ оқу &rarr;</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="news2.jpg" alt="Жаңалық 2 суреті">
+        <div class="news-card-content">
+          <h3>Google компаниясымен жаңа серіктестік</h3>
+          <p>Жасанды интеллект институты Google корпорациясымен студенттерге арналған тағылымдама бағдарламасын іске қосу туралы келісімге келді. Үздік студенттер Силикон алқабына жол тартады.</p>
+          <a href="#">Толығырақ оқу &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     (function placeNumbers() {
@@ -146,3 +257,4 @@
   </script>
 </body>
 </html>
+
