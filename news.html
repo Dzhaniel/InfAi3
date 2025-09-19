@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Соңғы жаңалықтар</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      color: #2c3e50;
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0 0 50px 0;
+    }
+    .back-link {
+        padding: 20px;
+    }
+    .back-link a {
+        text-decoration: none;
+        color: #34495e;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .content-section {
+      width: 80%;
+      margin: 20px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .content-section h2 {
+      text-align: center;
+      color: #34495e;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+    .news-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .news-card {
+      background: #fdfdfd;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin: 0;
+    }
+    .news-card-content {
+      padding: 20px;
+    }
+    .news-card-content h3 {
+      margin-top: 0;
+      color: #34495e;
+    }
+    .news-card-content p {
+        line-height: 1.6;
+    }
+    .news-card-content a {
+      text-decoration: none;
+      color: #fc5c7d;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="back-link">
+    <a href="index.html">&larr; Негізгі бетке оралу</a>
+  </div>
+
+  <div class="content-section">
+    <h2>Соңғы жаңалықтар</h2>
+    <div class="news-container">
+      <div class="news-card">
+        <img src="news1.jpg" alt="Жаңалық 1 суреті">
+        <div class="news-card-content">
+          <h3>Халықаралық хакатон жеңімпаздары</h3>
+          <p>Біздің институт студенттері халықаралық "AI Challenge 2024" хакатонында бірінші орынды иеленді. Олардың жобасы білім беру саласындағы мәселелерді шешуге бағытталған.</p>
+          <a href="#">Толығырақ оқу &rarr;</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <img src="news2.jpg" alt="Жаңалық 2 суреті">
+        <div class="news-card-content">
+          <h3>Google компаниясымен жаңа серіктестік</h3>
+          <p>Жасанды интеллект институты Google корпорациясымен студенттерге арналған тағылымдама бағдарламасын іске қосу туралы келісімге келді. Үздік студенттер Силикон алқабына жол тартады.</p>
+          <a href="#">Толығырақ оқу &rarr;</a>
+        </div>
+      </div>
+       <div class="news-card">
+        <img src="news3.jpg" alt="Жаңалық 3 суреті">
+        <div class="news-card-content">
+          <h3>Жаңа зертхананың ашылуы</h3>
+          <p>Институтта заманауи құрылғылармен жабдықталған "Робототехника және машиналық оқыту" зертханасы ашылды. Бұл студенттерге тәжірибелік білімдерін шыңдауға мүмкіндік береді.</p>
+          <a href="#">Толығырақ оқу &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>```
+
+Осы екі қадамнан кейін, `index.html` бетіндегі **"Соңғы жаңалықтар"** батырмасы жаңа `news.html` бетіне сілтейтін болады.
