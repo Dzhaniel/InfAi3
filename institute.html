@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Жасанды интеллект институты</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      color: #2c3e50;
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0 0 50px 0;
+    }
+    .back-link {
+        padding: 20px;
+    }
+    .back-link a {
+        text-decoration: none;
+        color: #34495e;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .section-title {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        color: #34495e;
+        font-size: 32px;
+        font-weight: bold;
+    }
+    .directors-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
+        width: 85%;
+        margin: 0 auto;
+    }
+    .director-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        text-align: center;
+        padding: 25px;
+        width: 300px;
+        transition: all 0.3s ease;
+    }
+    .director-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+    .director-card img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #74ebd5;
+        margin-bottom: 20px;
+    }
+    .director-card .info-button {
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background: linear-gradient(135deg, #74ebd5, #9face6);
+        color: #fff;
+        font-weight: bold;
+        transition: 0.3s;
+        width: 100%;
+    }
+    .director-card .info-button:hover {
+        opacity: 0.85;
+    }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 30px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .close-button {
+      color: #aaa;
+      position: absolute;
+      top: 10px; right: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close-button:hover,
+    .close-button:focus {
+      color: black;
+    }
+    .modal-content h2, .modal-content h3 { 
+      margin-top: 0; 
+      color: #34495e;
+    }
+    .modal-content p, .modal-content li {
+        text-align: left;
+        line-height: 1.6;
+    }
+    .modal-content hr {
+        border: 0;
+        height: 1px;
+        background-color: #ddd;
+        margin: 15px 0;
+    }
+    .gallery-container {
+        width: 85%;
+        margin: 30px auto 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="back-link">
+    <a href="index.html">&larr; Сабақ кестесіне оралу</a>
+  </div>
+
+  <h2 class="section-title">Институт басшылығы және оқытушылар</h2>
+
+  <div class="directors-container">
+    <div class="director-card">
+      <img src="director1.jpeg" alt="Нұрлан Серікұлы фотосы">
+      <button class="info-button" onclick="openModal('modal1')">Нұрлан Серікұлы</button>
+    </div>
+    <div class="director-card">
+      <img src="as-eltaev.jpg" alt="Асхат Елтаев фотосы">
+      <button class="info-button" onclick="openModal('modal2')">Асхат Елтаев</button>
+    </div>
+    <div class="director-card">
+      <img src="e4026d04-814c-4365-a3cb-b2797abab574.jpeg" alt="Жүсіпбек Ботагөз фотосы">
+      <button class="info-button" onclick="openModal('modal4')">Жүсіпбек Ботагөз</button>
+    </div>
+    <div class="director-card">
+      <img src="1c013bfd-f33f-4fef-b596-bf26e5913c76.jpeg" alt="Жанбатыр Амангелді фотосы">
+      <button class="info-button" onclick="openModal('modal5')">Жанбатыр Амангелді</button>
+    </div>
+    <div class="director-card">
+      <img src="49d03877-e332-4719-ab15-9b9801fbb82b.jpeg" alt="Жарменова Ботагоз фотосы">
+      <button class="info-button" onclick="openModal('modal6')">Жарменова Ботагоз</button>
+    </div>
+    <div class="director-card">
+      <img src="fb77d729-7391-4571-8af9-9e907ff2e2e8.jpeg" alt="Ильясова Элмира фотосы">
+      <button class="info-button" onclick="openModal('modal7')">Ильясова Элмира</button>
+    </div>
+    <div class="director-card">
+      <img src="82fb5939bd60c90948ce26939507ce14.jpg" alt="Жаппаров Нұрғазы фотосы">
+      <button class="info-button" onclick="openModal('modal9')">Жаппаров Нұрғазы</button>
+    </div>
+    <div class="director-card">
+      <img src="64c66ef52d76cbfa2751569c2abddb99.jpg" alt="Дүйсекеева Нұргүл фотосы">
+      <button class="info-button" onclick="openModal('modal10')">Дүйсекеева Нұргүл</button>
+    </div>
+    <div class="director-card">
+      <img src="bb4d7cc1-092f-487c-8457-5282098194c3.jpeg" alt="Мусагулова Гүлнұр фотосы">
+      <button class="info-button" onclick="openModal('modal11')">Мусагулова Гүлнұр</button>
+    </div>
+  </div>
+
+  <!-- Барлық модальды терезелер -->
+  <div id="modal1" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal1')">&times;</span>
+        <h2>Құлмырзаев Нұрлан Серікұлы</h2>
+        <p><strong>Лауазымы:</strong> Жасанды интеллект институтының директоры</p>
+        <hr>
+        <p>1982 жылы 1 қазанда дүниеге келген...</p>
+        <!-- Толық ақпарат -->
+    </div>
+  </div>
+  
+  <div id="modal2" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal2')">&times;</span>
+        <h2>Асхат Елтаев</h2>
+        <p><strong>Лауазымы:</strong> Институт директорының орынбасары</p>
+        <hr>
+        <!-- Толық ақпарат -->
+    </div>
+  </div>
+
+  <div id="modal4" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal('modal4')">&times;</span>
+      <h2>Жүсіпбек Ботагөз Күнібекқызы</h2>
+      <p><strong>Лауазымы:</strong> Информатика магистрі, аға оқытушы</p>
+      <hr>
+      <!-- Толық ақпарат -->
+    </div>
+  </div>
+
+  <div id="modal5" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal5')">&times;</span>
+        <h2>Жанбатыр Амангелді Сапабекұлы</h2>
+        <p><strong>Лауазымы:</strong> Гуманитарлық ғылымдар магистрі, аға оқытушы</p>
+        <hr>
+        <!-- Толық ақпарат -->
+    </div>
+  </div>
+  
+  <div id="modal6" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal('modal6')">&times;</span>
+      <h2>Жарменова Ботагоз Қуанышқызы</h2>
+      <p><strong>Лауазымы:</strong> Жаратылыстану ғылымдарының магистрі, аға оқытушы</p>
+      <hr>
+      <!-- Толық ақпарат -->
+    </div>
+  </div>
+
+  <div id="modal7" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal7')">&times;</span>
+        <h2>Ильясова Элмира Умирзаковна</h2>
+        <p><strong>Лауазымы:</strong> Әлеуметтік ғылымдарының магистрі</p>
+        <hr>
+        <!-- Толық ақпарат -->
+    </div>
+  </div>
+  
+  <div id="modal9" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal('modal9')">&times;</span>
+      <h2>Жапбаров Нұрғазы Әбсадықұлы</h2>
+      <p><strong>Лауазымы:</strong> Аға оқытушы, гуманитарлық ғылымдар магистрі</p>
+      <hr>
+      <!-- Толық ақпарат -->
+    </div>
+  </div>
+  
+  <div id="modal10" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal('modal10')">&times;</span>
+        <h2>Дүйсекеева Нұргүл Жалелатдинқызы</h2>
+        <p><strong>Лауазымы:</strong> Аға оқытушы, PhD</p>
+        <hr>
+        <!-- Толық ақпарат -->
+    </div>
+  </div>
+
+  <div id="modal11" class="modal-overlay">
+      <div class="modal-content">
+          <span class="close-button" onclick="closeModal('modal11')">&times;</span>
+          <h2>Мусагулова Гүлнұр</h2>
+          <p>Оқытушы</p>
+          <hr>
+          <!-- Толық ақпарат -->
+      </div>
+  </div>
+  
+  <h2 class="section-title">Институт галереясы</h2>
+  <div class="gallery-container">
+    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.16.35 (1).jpeg" alt="Галерея суреті 1"></div>
+    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.16.35.jpeg" alt="Галерея суреті 2"></div>
+    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.16.36 (1).jpeg" alt="Галерея суреті 3"></div>
+  </div>
+
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "flex";
+    }
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        event.target.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
