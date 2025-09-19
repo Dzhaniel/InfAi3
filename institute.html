@@ -120,24 +120,37 @@
         background-color: #ddd;
         margin: 15px 0;
     }
+    
+    /* --- Жаңартылған Галерея стилі --- */
     .gallery-container {
         width: 85%;
-        margin: 30px auto 0 auto;
+        margin: 40px auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-auto-rows: 250px;
+        gap: 15px;
+    }
+    .gallery-item {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
     .gallery-item img {
         width: 100%;
-        height: 200px;
+        height: 100%;
         object-fit: cover;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: block;
     }
-    .gallery-item img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    .wide {
+        grid-column: span 2;
+    }
+    .tall {
+        grid-row: span 2;
     }
   </style>
 </head>
@@ -155,7 +168,7 @@
       <button class="info-button" onclick="openModal('modal1')">Нұрлан Серікұлы</button>
     </div>
     <div class="director-card">
-      <img src="as-eltaev.jpg.jpeg" alt="Асхат Елтаев фотосы">
+      <img src="as-eltaev.jpg" alt="Асхат Елтаев фотосы">
       <button class="info-button" onclick="openModal('modal2')">Асхат Елтаев</button>
     </div>
     <div class="director-card">
@@ -375,13 +388,34 @@
       </div>
   </div>
   
+  <!-- Жаңартылған Институт галереясы -->
   <h2 class="section-title">Институт галереясы</h2>
-    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.16.35 (1).jpeg" alt="Галерея суреті 1"></div>
-    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.16.35.jpeg" alt="Галерея суреті 2"></div>
-    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.16.36 (1).jpeg" alt="Галерея суреті 3"></div>
-    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.16.36.jpeg" alt="Галерея суреті 4"></div>
-    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.25.40.jpeg" alt="Галерея суреті 5"></div>
-    <div class="gallery-item"><img src="WhatsApp Image 2025-09-17 at 23.25.41.jpeg" alt="Галерея суреті 6"></div>
+  <div class="gallery-container">
+    
+    <div class="gallery-item tall">
+      <img src="WhatsApp Image 2025-09-17 at 23.16.35 (1).jpeg" alt="Галерея суреті 1">
+    </div>
+
+    <div class="gallery-item">
+      <img src="WhatsApp Image 2025-09-17 at 23.16.35.jpeg" alt="Галерея суреті 2">
+    </div>
+
+    <div class="gallery-item wide">
+      <img src="WhatsApp Image 2025-09-17 at 23.16.36 (1).jpeg" alt="Галерея суреті 3">
+    </div>
+
+    <div class="gallery-item">
+      <img src="WhatsApp Image 2025-09-17 at 23.16.36.jpeg" alt="Галерея суреті 4">
+    </div>
+
+    <div class="gallery-item">
+      <img src="WhatsApp Image 2025-09-17 at 23.25.40.jpeg" alt="Галерея суреті 5">
+    </div>
+
+    <div class="gallery-item wide">
+      <img src="WhatsApp Image 2025-09-17 at 23.25.41.jpeg" alt="Галерея суреті 6">
+    </div>
+
   </div>
 
   <script>
@@ -399,5 +433,3 @@
   </script>
 </body>
 </html>
-
-
